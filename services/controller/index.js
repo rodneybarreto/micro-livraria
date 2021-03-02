@@ -53,9 +53,10 @@ app.get('/product/:id', (req, res, next) => {
     });
 });
 
+const port = process.env.PORT || 3000;
 /**
  * Inicia o router
  */
-app.listen(3000, () => {
-    console.log('Controller Service running on http://localhost:3000');
+app.listen(port, () => {
+    console.log(`Controller Service running on http://localhost:${port}`);
 });

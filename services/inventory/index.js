@@ -2,7 +2,7 @@ const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const products = require('./products.json');
 
-const packageDefinition = protoLoader.loadSync('proto/inventory.proto', {
+const packageDefinition = protoLoader.loadSync('./proto/inventory.proto', {
     keepCase: true,
     longs: String,
     enums: String,
@@ -22,7 +22,8 @@ server.addService(inventoryProto.InventoryService.service, {
     },
 });
 
-server.bindAsync('127.0.0.1:3002', grpc.ServerCredentials.createInsecure(), () => {
-    console.log('Inventory Service running at http://127.0.0.1:3002');
+const port = process.env.PORT || 3002;
+server.bindAsync(`127.0.0.1:${port}`, grpc.ServerCredentials.createInsecure(), () => {
+    console.log(`Inventory Service running at http://127.0.0.1:${port}`);
     server.start();
 });

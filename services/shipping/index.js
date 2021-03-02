@@ -1,7 +1,7 @@
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 
-const packageDefinition = protoLoader.loadSync('proto/shipping.proto', {
+const packageDefinition = protoLoader.loadSync('./proto/shipping.proto', {
     keepCase: true,
     longs: String,
     enums: String,
@@ -22,8 +22,8 @@ server.addService(shippingProto.ShippingService.service, {
         });
     },
 });
-
-server.bindAsync('0.0.0.0:3001', grpc.ServerCredentials.createInsecure(), () => {
-    console.log('Shipping Service running at http://127.0.0.1:3001');
+const port = process.env.PORT || 3001;
+server.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), () => {
+    console.log(`Shipping Service running at http://127.0.0.1:${port}`);
     server.start();
 });
