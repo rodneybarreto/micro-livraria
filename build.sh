@@ -1,15 +1,15 @@
 cd services/controller
-docker build -t cmendes/livraria-controller .
-docker push cmendes/livraria-controller
+docker build -t rodneybarreto/livraria-controller .
+docker push rodneybarreto/livraria-controller
 
 cd ../inventory
-docker build -t cmendes/livraria-inventory .
-docker push cmendes/livraria-inventory
+docker build -t rodneybarreto/livraria-inventory .
+docker push rodneybarreto/livraria-inventory
 
 cd ../shipping
-docker build -t cmendes/livraria-shipping .
-docker push cmendes/livraria-shipping
+docker build -t rodneybarreto/livraria-shipping .
+docker push rodneybarreto/livraria-shipping
 
 cd ../frontend
-docker build -t cmendes/livraria-frontend .
-docker push cmendes/livraria-frontend
+docker build -t rodneybarreto/livraria-frontend .
+docker push rodneybarreto/livraria-frontend

@@ -15,7 +15,7 @@ spec:
         app: shipping
     spec:
       containers:
-      - image: cmendes/livraria-shipping
+      - image: rodneybarreto/livraria-shipping
         imagePullPolicy: "Always"
         name: shipping
         ports:

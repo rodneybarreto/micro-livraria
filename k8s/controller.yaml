@@ -5,7 +5,7 @@ metadata:
     app: controller
   name: controller
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: controller
@@ -15,7 +15,7 @@ spec:
         app: controller
     spec:
       containers:
-      - image: cmendes/livraria-controller
+      - image: rodneybarreto/livraria-controller
         imagePullPolicy: "Always"
         name: controller
         ports:

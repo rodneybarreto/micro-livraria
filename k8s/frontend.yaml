@@ -15,7 +15,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - image: cmendes/livraria-frontend
+      - image: rodneybarreto/livraria-frontend
         imagePullPolicy: "Always"
         name: frontend
         ports:
